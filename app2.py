@@ -13,7 +13,7 @@ from flask import Flask, jsonify, render_template, g, request
 from flask_sqlalchemy import SQLAlchemy
 
 # Database Set up
-engine = create_engine("sqlite:///db/database.sqlite")
+engine = create_engine("sqlite:///db/database_shrunk.sqlite")
 
 Base = automap_base()
 Base.prepare(engine, reflect = True)
@@ -27,7 +27,7 @@ session = Session(engine)
 ##### Set up Flask
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/database.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/database_shrunk.sqlite"
 db = SQLAlchemy(app)
 
 @app.route("/")
