@@ -20,5 +20,9 @@ PRAGMA foreign_keys = OFF;
 DROP TABLE addresses;
 
 
+-- now to shrink the db --
+vacuum;
+
+
 		 
 
