@@ -13,7 +13,7 @@ from flask import Flask, jsonify, render_template, g, request
 from flask_sqlalchemy import SQLAlchemy
 
 # Database Set up
-engine = create_engine("sqlite:///db/database_shrunk.sqlite")
+engine = create_engine("sqlite:///db/database_shrunk.sqlite?check_same_thread=False")
 
 Base = automap_base()
 Base.prepare(engine, reflect = True)
