@@ -70,8 +70,6 @@ def names():
 
     return jsonify(names)
 
-    # Return a list of the column names (sample names)
-    # return jsonify(list(df.columns)[2:])
 
 @app.route("/metadata/<sample>")
 def samples_player(sample):
@@ -84,9 +82,10 @@ def samples_player(sample):
         Player_Attributes.finishing,
         Player_Attributes.crossing,
         Player_Attributes.overall_rating,
+        Player_Attributes.ball_control,
     ]
 
-    results3 = db.session.query(*sel).all()
+    results3 = db.session.query(*sel).filter(Player_Attributes.player_fifa_api_id == sample).all()
 
    # Create a dictionary entry for each row of metadata information
     samples_player ={}
@@ -98,11 +97,10 @@ def samples_player(sample):
         samples_player["finishing"] = result[4]
         samples_player["crossing"] = result[5]
         samples_player["overall_rating"] = result[6]
+        samples_player["ball_control"] = result[7]
 
     print(samples_player)
     return jsonify(samples_player)
-    
-
 
 if __name__ == "__main__":
     app.run()

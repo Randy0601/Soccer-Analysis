@@ -13,6 +13,33 @@ d3.json(`/metadata/${sample}`).then(function(sample) {
     }
 )};
 
+function buildCharts(sample){
+  d3.json(`/metadata/${sample}`).then(function(data){
+
+  var data = [{
+    type: 'scatterpolar',
+    r: [data.stamina, data.agility, data.acceleration, data.finishing, data.crossing, data.ball_control, data.stamina],
+    theta: ['Stamina','Agility','Acceleration', 'Finishing', 'Crossing','Ball_Control', 'Stamina'],
+    name: data.player_fifa_api_id,
+    fill: 'toself'
+  }];
+  
+var layout = {
+    polar: {
+      radialaxis: {
+        visible: true,
+        range: [0, 100]
+      }
+    },
+    showlegend: true
+  };
+  
+  Plotly.plot("myDiv", data, layout);
+  });
+};
+
+
+
 function init() {
     // Grab a reference to the dropdown select element
     var selector = d3.select("#selDataset");
@@ -28,7 +55,7 @@ function init() {
   
       // Use the first sample from the list to build the initial plots
       const firstSample = sampleNames[0];
-    //   buildCharts(firstSample);
+      buildCharts(firstSample);
       buildMetadata(firstSample);
     });
   }
@@ -37,7 +64,7 @@ function init() {
 
 function optionChanged(newSample) {
     // Fetch new data each time a new sample is selected
-    // buildCharts(newSample);
+    buildCharts(newSample);
     buildMetadata(newSample);
   }
 
@@ -46,22 +73,3 @@ init();
 
 
 
-
-var data = [{
-    type: 'scatterpolar',
-    r: [54, 59, 60, 44, 49, 54],
-    theta: ['Stamina','Agility','Acceleration', 'Finishing', 'Crossing', 'Stamina'],
-    fill: 'toself'
-  }];
-  
-var layout = {
-    polar: {
-      radialaxis: {
-        visible: true,
-        range: [0, 100]
-      }
-    },
-    showlegend: false
-  };
-  
-  Plotly.plot("myDiv", data, layout);
