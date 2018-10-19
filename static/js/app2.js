@@ -90,3 +90,6 @@ function filterData(inputData) {
      return filteredData;
 });
 };
+
+d3.select("#filter-btn").on("click", filterData);
+buildData(player_attr);
