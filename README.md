@@ -7,7 +7,7 @@
   
     ![Project Data Flow](static/images/DataFlow.PNG)
     
-    ![Data Base](static/images/sample_database.PNG)
+    ![Data Base](https://github.com/Randy0601/Soccer-Analysis/blob/master/static/images/sample_database.PNG)
     
     ![Radar Plot 1](static/images/sample_radar.PNG)
     
