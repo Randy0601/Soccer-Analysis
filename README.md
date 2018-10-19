@@ -4,6 +4,11 @@
 
 ![sample_radar](https://user-images.githubusercontent.com/37318055/47193799-69a79180-d31a-11e8-8b39-f9af0d382cb7.PNG)
 
+![sample_radar2](https://user-images.githubusercontent.com/37318055/47193846-98be0300-d31a-11e8-97ce-f95dc86cbfad.PNG)
+
+![sample_database](https://user-images.githubusercontent.com/37318055/47193847-9c518a00-d31a-11e8-983b-efaa4cc320e1.PNG)
+
+
   Our team will comparing data from the international FIFA football game
 
   visualize player attributes to determine:
