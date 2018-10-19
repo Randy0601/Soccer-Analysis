@@ -11,4 +11,4 @@
     
     ![Radar Plot 1](static/images/sample_radar.PNG)
     
-    ![Radar Plot 2](static/images/sample_radar.PNG)
+    ![Radar Plot 2](static/images/sample_radar2.PNG)
