@@ -31,6 +31,8 @@
 
 
 ## Data Visualization Examples
+    Radar Plots graphing player attribute ratings
+
 ![sample_radar](https://user-images.githubusercontent.com/37318055/47193980-213ca380-d31b-11e8-8681-a7d82e538595.PNG)
 ![sample_radar2](https://user-images.githubusercontent.com/37318055/47193981-213ca380-d31b-11e8-9782-a2c02c3b7431.PNG)
    
