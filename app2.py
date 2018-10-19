@@ -7,7 +7,7 @@ import os
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine, func, MetaData, Table
 
 from flask import Flask, jsonify, render_template, g, request
 from flask_sqlalchemy import SQLAlchemy
@@ -44,9 +44,11 @@ def player():
 
 @app.route("/player_attr")
 def player_attr():
-    results1 = session.query(Player_Attributes.player_fifa_api_id, Player_Attributes.overall_rating, Player_Attributes.potential, Player_Attributes.preferred_foot, Player_Attributes.crossing, Player_Attributes.finishing, Player_Attributes.acceleration, Player_Attributes.agility, Player_Attributes.stamina).all()
+    results1 = session.query(Player_Attributes.player_fifa_api_id, Player_Attributes.overall_rating, Player_Attributes.preferred_foot, Player_Attributes.crossing, Player_Attributes.finishing, Player_Attributes.acceleration, Player_Attributes.agility, Player_Attributes.stamina).all()
     all_players_attr = list(np.ravel(results1))
     return jsonify(all_players_attr)
+    
+    
 
 # @app.route("/names")
 # def names():
@@ -70,6 +72,36 @@ def names():
 
     return jsonify(names)
 
+@app.route("/player_table")
+def player_table():
+    sel = [
+        Player_Attributes.player_fifa_api_id,
+        Player_Attributes.overall_rating,
+        Player_Attributes.preferred_foot,
+        Player_Attributes.crossing,
+        Player_Attributes.finishing,
+        Player_Attributes.acceleration,
+        Player_Attributes.agility,
+        Player_Attributes.stamina,
+        Player_Attributes.ball_control,
+    ]  
+
+    results5 =db.session.query(*sel).all()
+
+    # player_table ={}
+    # for result in results5:
+    #     player_table["player_fifa_api_id"] = result[0]
+    #     player_table["overall_rating"] = result[1]
+    #     player_table["preferred_foot"] = result[2]
+    #     player_table["crossing"] = result[3]
+    #     player_table["finishing"] = result[4]
+    #     player_table["acceleration"] = result[5]
+    #     player_table["agility"] = result[6]
+    #     player_table["stamina"] = result[7]
+    #     player_table["ball_control"] = result[8]
+
+    print(results5)
+    return jsonify(results5)
 
 @app.route("/metadata/<sample>")
 def samples_player(sample):

@@ -1,10 +1,10 @@
-var tabledata = d3.json(`/player_attr`);
-
+var tabledata = d3.json(`/player_table`);
+console.log(tabledata);
 var tbody = d3.select("tbody");
 
-function buildData(player_attr) {
-d3.json(`/player_attr`).then((player) =>{
-    Object.entry(player).map(function([key, value]) {
+function buildData(player_table) {
+d3.json(`/player_table`).then((player) =>{
+    Object.entries(player).map(function([key, value]) {
         console.log(`Key: ${key} and Value ${value}`);
             var cell = tbody.append("td");
             cell.text(value);
@@ -72,11 +72,11 @@ function filterData(inputData) {
       console.log(filteredData);
     }
 
-    var inputElement = d3.select("#ball_control");
+    var inputElement = d3.select("#preferred_foot");
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
-      console.log(`Filter ball_control: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.ball_control === inputValue); 
+      console.log(`Filter preferred_foot: ${inputValue}`);
+      var filteredData = tableData.filter(data => data.preferred_foot === inputValue.toLowerCase()); 
       console.log(filteredData);
     }
 
@@ -92,4 +92,4 @@ function filterData(inputData) {
 };
 
 d3.select("#filter-btn").on("click", filterData);
-buildData(player_attr);
+buildData();
