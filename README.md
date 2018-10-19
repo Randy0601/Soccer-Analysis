@@ -15,10 +15,10 @@
       3)
   
   ## Team
-  Randy Chan
-  Cory Kretzmer
-  Tom Matoushek
-  Matthew Warner
+    Randy Chan
+    Cory Kretzmer
+    Tom Matoushek
+    Matthew Warner
   
   
   
