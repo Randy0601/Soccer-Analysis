@@ -58,6 +58,20 @@ def player_attr():
 
 #     return jsonify(names)
 
+@app.route("/names2")
+def names2():
+    """Return a list of sample names."""
+
+    # Use Pandas to perform the sql query
+    stmt = db.session.query(Player).statement
+    df = pd.read_sql_query(stmt, db.session.bind)
+
+    sel = [Player.player_name]
+
+    names2 = [name[0] for name in db.session.query(*sel).order_by(func.random()).all()]
+
+    return jsonify(names2)
+
 @app.route("/names")
 def names():
     """Return a list of sample names."""
@@ -68,7 +82,7 @@ def names():
 
     sel = [Player_Attributes.player_fifa_api_id]
 
-    names = [name[0] for name in db.session.query(*sel).all()]
+    names = [name[0] for name in db.session.query(*sel).order_by(func.random()).all()]
 
     return jsonify(names)
 

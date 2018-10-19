@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   
   html,
@@ -41,6 +41,7 @@
   .navbar {
     padding: 5px;
     margin: 0;
+    font-size: 14px;
   }
   
 
