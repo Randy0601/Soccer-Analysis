@@ -9,7 +9,9 @@
       3)
   
   ## Data Flows
-    ![Project Data Flow]("https://github.com/Randy0601/Soccer-Analysis/blob/master/static/images/DataFlow.PNG")
+  
+![dataflow](https://user-images.githubusercontent.com/37318055/47193978-213ca380-d31b-11e8-898c-c64965e61ef6.PNG)
+
   
   
   ## Team
