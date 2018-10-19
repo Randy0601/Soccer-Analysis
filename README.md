@@ -16,9 +16,9 @@
   
   ## Team
   Randy Chan
-  Cory Kretz??
+  Cory Kretzmer
   Tom Matoushek
-   Matthew Warner
+  Matthew Warner
   
   
   
