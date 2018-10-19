@@ -1,5 +1,5 @@
 
-# Soccer Analysis Visualization Project
+# Soccer Analysis Visualization Project  
 
 ## Project Proposal
 
