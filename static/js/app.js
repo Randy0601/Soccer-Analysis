@@ -71,5 +71,3 @@ function optionChanged(newSample) {
 init();
 
 
-
-
