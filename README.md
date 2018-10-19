@@ -3,7 +3,11 @@
 
   Our team will comparing data from the international FIFA football game
 
-  comparing player attributes
+  visualize player attributes to determine:
+  
+      1) which attributes contribute to higher competitiveness
+      2) 
+      3)
   
     ![Project Data Flow](static/images/DataFlow.PNG)
     
