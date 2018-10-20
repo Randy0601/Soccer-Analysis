@@ -7,8 +7,8 @@
     We will visualize player attributes to determine:
   
       1) which attributes contribute to higher competitiveness
-      2) 
-      3)
+      2) Top Players
+      3) Attribute distributions
 
 
 ## Team
