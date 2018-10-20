@@ -156,8 +156,15 @@ def render_static(player_table):
 @app.route("/histograms")
 def histogram():
     """Hisogram page"""
-    return render_template("histograms.html")
+    # overall_rating = Player_Attributes.overall_rating
+    
+
+    results =db.session.query(Player_Attributes.overall_rating).all()
+    
+    rez=list(np.ravel(results))
+    # print(results)
+    return render_template("histograms.html", overall_rating=rez)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
