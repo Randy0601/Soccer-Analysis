@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>UFO Sightings</h1>
+      <p>The Truth is Out There</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Date</label>
+                        <input class="form-control" id="date_time" type="text" placeholder="1/11/2011">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a City</label>
+                        <input class="form-control" id="city" type="text" placeholder="Piedmont">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a State</label>
+                        <input class="form-control" id="state" type="text" placeholder="mo">
+                      </li>
+                      <li class="filter list-group-item">
+                          <label for="date">Enter a Country</label>
+                          <input class="form-control" id="country" placeholder="us" type="text">
+                      </li>
+                      <li class="filter list-group-item">
+                          <label for="date">Enter a Shape</label>
+                          <input class="form-control" id="shape" placeholder="Sphere" type="text">
+                        </li>
+                    </ul>
+
+                 
+                  </div>
+                
+                  <!-- <div class="row">
+                      <div class="span6" style="float: none; margin: 0 auto;"> -->
+                          <!-- <button id="search" type="button" class="btn-sm btn-outline-secondary">Search</button>
+                          <button id="load" type="button" class="btn-sm btn-outline-secondary">Reload</button>
+                      </div>
+                  </div> -->
+                  <button id="search" type="button" class="btn btn-default">Search</button>
+                  <button id="load" type="button" class="btn btn-default">Reload</button>
+                  <!-- <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button> -->
+                 </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <button id="prev" type="button" class="btn btn-default">Prev Page!</button>
+        <button id="next" type="button" class="btn btn-default">Next Page!</button>
+        <hr class="my-4">
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">UFO Sightings</span>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/index.js"></script>
+</body>
+
+</html>
+
