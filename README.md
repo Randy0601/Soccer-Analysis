@@ -4,7 +4,7 @@
 
 ## Background
     The inspiration for this visualization tool is based on fantasy sports leagues 
-    where the ability to ascertain and analyze the abilities of indivual players 
+    where the capacity to ascertain and analyze the abilities of indivual players 
     is critical in choosing players during the draft rounds. This visualization tool
     enables the objective comparison of players thus promoting strategic and 
     tactical choices of players during each draft round.
