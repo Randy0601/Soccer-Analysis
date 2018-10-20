@@ -41,35 +41,39 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Player ID</label>
+                        <label for="playerid">Enter a Player ID</label>
                         <input class="form-control" id="player" type="number" placeholder="123456">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="City">Overall_Rating</label>
+                        <label for="playername">Player Name</label>
+                        <input class="form-control" id="preferred_foot" type="text" placeholder="Wayne Rooney">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="overall_rating">Overall_Rating</label>
                         <input class="form-control" id="overall_rating" type="number" placeholder="60">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="State">Preferred Foot</label>
+                        <label for="preferred_foot">Preferred Foot</label>
                         <input class="form-control" id="preferred_foot" type="text" placeholder="right">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="Country">Crossing</label>
+                        <label for="crossing">Crossing</label>
                         <input class="form-control" id="crossing" type="number" placeholder="68">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Finishing</label>
+                        <label for="finishing">Finishing</label>
                         <input class="form-control" id="finishing" type="number" placeholder="48">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Acceleration</label>
+                        <label for="acceleration">Acceleration</label>
                         <input class="form-control" id="acceleration" type="number" placeholder="57">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Agility</label>
+                        <label for="agility">Agility</label>
                         <input class="form-control" id="agility" type="number" placeholder="60">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Stamina</label>
+                        <label for="stamina">Stamina</label>
                         <input class="form-control" id="stamina" type="number" placeholder="52">
                       </li>
                     </ul>
@@ -86,10 +90,12 @@
               <thead>
                 <tr>
                   <th class="table-head">Player ID</th>
+                  <th class="table-head">Player Name</th>
                   <th class="table-head">Overall_Rating</th>
                   <th class="table-head">Preferred Foot</th>
                   <th class="table-head">Crossing</th>
                   <th class="table-head">Finishing</th>
+                  <th class="table-head">Ball Control</th>
                   <th class="table-head">Acceleration</th>
                   <th class="table-head">Agility</th>
                   <th class="table-head">stamina</th>
@@ -106,7 +112,8 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="static/js/app2.js"></script>
+  <script src="../static/js/data.js"></script>  
+  <script src="../static/js/app2.js"></script>
 </body>
 
 </html>
