@@ -13,7 +13,7 @@
 
 ## Team
     Randy Chan
-    Cory Kretzmer
+    Corey Kretzmer
     Tom Matoushek
     Matthew Warner
 
