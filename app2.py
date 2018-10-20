@@ -152,5 +152,12 @@ def samples_player(sample):
 def render_static(player_table):
     return render_template("player_attr.html")
 
+
+@app.route("/histograms")
+def index():
+    """Hisogram page"""
+    return render_template("histograms.html")
+
+
 if __name__ == "__main__":
     app.run()
