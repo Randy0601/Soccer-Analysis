@@ -157,10 +157,7 @@ def render_static(player_table):
 def histogram():
     """Hisogram page"""
     # overall_rating = Player_Attributes.overall_rating
-    
-
     results =db.session.query(Player_Attributes.overall_rating).all()
-    
     rez=list(np.ravel(results))
     # print(results)
     return render_template("histograms.html", overall_rating=rez)
