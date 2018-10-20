@@ -156,7 +156,7 @@ def render_static(player_table):
 @app.route("/histograms")
 def histogram():
     """Hisogram page"""
-    return render_template("histogram.html")
+    return render_template("histograms.html")
 
 
 if __name__ == "__main__":
