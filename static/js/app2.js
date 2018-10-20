@@ -1,9 +1,9 @@
-var tabledata = d3.json(`/player_table`);
+var tabledata = d3.json(`/player_attr`);
 console.log(tabledata);
 var tbody = d3.select("tbody");
 
-function buildData(player_table) {
-d3.json(`/player_table`).then((player) =>{
+function buildData(player_attr) {
+d3.json(`/player_attr`).then((player) =>{
     Object.entries(player).map(function([key, value]) {
         console.log(`Key: ${key} and Value ${value}`);
             var cell = tbody.append("td");
