@@ -1,6 +1,15 @@
 
 # Soccer Analysis Visualization Project  ![soccer32](https://user-images.githubusercontent.com/39446363/47233177-833aee80-d397-11e8-83ce-7f565c170553.gif)
 
+
+## Background
+    The inspiration for this visualization tools is based on fantasy sports leagues 
+    where the ability to ascertain and analyze the abilities of indivual players 
+    is critical in choosing players during the draft rounds. This visualization tool
+    enables the objective comparison of player abilities thus promoting strategic and 
+    tactical choices of players during each draft round.
+
+
 ## Project Proposal
 
     Our team will compare player data from the international FIFA soccer video game
