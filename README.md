@@ -7,7 +7,9 @@
     where the capacity to ascertain and analyze the abilities of indivual players 
     is critical in choosing players during the draft rounds. This visualization tool
     enables the objective comparison of players thus promoting strategic and 
-    tactical choices of players during each draft round.-
+    tactical choices of players during each draft round.
+    
+    Plus you can win money by playing the perfect game! http://blog.al.com/live/2010/05/23-year-old_mobilian_wins_1m_p.html
 
 
 ## Project Proposal
