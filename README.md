@@ -7,7 +7,7 @@
     where the capacity to ascertain and analyze the abilities of indivual players 
     is critical in choosing players during the draft rounds. This visualization tool
     enables the objective comparison of players thus promoting strategic and 
-    tactical choices of players during each draft round.
+    tactical choices of players during each draft round.-
 
 
 ## Project Proposal
