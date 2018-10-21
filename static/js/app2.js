@@ -78,7 +78,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Overall_Rating: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.overall_rating.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.overall_rating.toString() > inputValue); 
       console.log(filteredData);
     }
 
