@@ -148,9 +148,13 @@ def samples_player(sample):
     print(samples_player)
     return jsonify(samples_player)
 
-@app.route("/<player_table>")
-def render_static(player_table):
+@app.route("/table")
+def table():
     return render_template("player_attr.html")
+
+@app.route("/scatter")
+def scatter():
+    return render_template("scatter.html")
 
 
 @app.route("/histograms")

@@ -38,7 +38,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Stamina: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.stamina.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.stamina.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -46,7 +46,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Agility: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.agility.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.agility.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -54,7 +54,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Acceleration: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.acceleration.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.acceleration.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -62,7 +62,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Finishing: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.finishing.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.finishing.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -70,7 +70,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Crossing: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.crossing.toString() === inputValue); 
+      var filteredData = tableData.filter(data => data.crossing.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -78,7 +78,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Overall_Rating: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.overall_rating.toString() > inputValue); 
+      var filteredData = tableData.filter(data => data.overall_rating.toString() >= inputValue); 
       console.log(filteredData);
     }
 

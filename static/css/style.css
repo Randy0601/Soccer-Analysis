@@ -35,4 +35,16 @@ html,body{overflow-x: hidden;}
 .navbar {
   padding: 5px;
   margin: 0;
+  font-size: 14px;
+  background:rgb(0, 28, 80) !important;
 }
+
+
+.nav-player {
+  position: absolute;
+  bottom: 5px;
+  /* left: 160px; */
+  width: 35px;
+  color: white;
+}
+
