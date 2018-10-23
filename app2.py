@@ -162,9 +162,12 @@ def histogram():
     """Hisogram page"""
     # overall_rating = Player_Attributes.overall_rating
     results =db.session.query(Player_Attributes.overall_rating).all()
-    rez=list(np.ravel(results))
+    resultsList=list(np.ravel(results))
     # print(results)
-    return render_template("histograms.html", overall_rating=rez)
+
+    attributesList=list(Player_Attributes.__table__.columns.keys())
+
+    return render_template("histograms.html", jsData=resultsList, attrs=attributesList)
 
 
 if __name__ == "__main__":

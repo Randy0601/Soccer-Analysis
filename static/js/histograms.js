@@ -5,9 +5,12 @@
 var y= [2,2,2]
 var x= htmldata;
 
+
 var trace = {
     x: x,
     type: 'histogram',
   };
 var data = [trace];
 Plotly.newPlot('myDiv', data);
+
+console.log(attrsList)
