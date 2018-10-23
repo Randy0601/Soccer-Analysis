@@ -8,9 +8,13 @@ var x= htmldata;
 
 var trace = {
     x: x,
-    type: 'histogram',
+    type: 'histogram'
   };
+var layout={
+  showlegend: true
+};
+
 var data = [trace];
-Plotly.newPlot('myDiv', data);
+Plotly.newPlot('myDiv', data, layout);
 
 console.log(attrsList)
