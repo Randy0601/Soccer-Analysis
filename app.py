@@ -169,6 +169,13 @@ def histogram():
 
     return render_template("histograms.html", jsData=resultsList, attrs=attributesList)
 
+@app.route("/histograms/<attr>")
+def player_attributes(attr):
+    """Return the attributes """
+    results =db.session.query(Player_Attributes.__dict__[attr]).all()
+    resultsList=list(np.ravel(results))
+    return jsonify(resultsList)
+    # return ''.join([str(i) for i in resultsList])
 
 if __name__ == "__main__":
     app.run(debug=True)
