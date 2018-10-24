@@ -113,7 +113,7 @@ def player_table():
     #     player_table["stamina"] = result[7]
     #     player_table["ball_control"] = result[8]
 
-    print(results5)
+    # print(results5)
     return jsonify(results5)
 
 @app.route("/metadata/<sample>")
@@ -144,7 +144,7 @@ def samples_player(sample):
         samples_player["overall_rating"] = result[6]
         samples_player["ball_control"] = result[7]
 
-    print(samples_player)
+    # print(samples_player)
     return jsonify(samples_player)
 
 @app.route("/table")
@@ -158,21 +158,25 @@ def scatter():
 
 @app.route("/histograms")
 def histogram():
-    """Hisogram page"""
+    """Histogram page"""
     # overall_rating = Player_Attributes.overall_rating
     results =db.session.query(Player_Attributes.overall_rating).all()
     resultsList=list(np.ravel(results))
     # print(results)
 
     attributesList=list(Player_Attributes.__table__.columns.keys())
-
-    return render_template("histograms.html", jsData=resultsList, attrs=attributesList)
+    newList = [i for i in attributesList if i not in ("id", "player_fifa_api_id", "player_api_id", "date")]
+    
+    return render_template("histograms.html", jsData=resultsList, attrs=newList)
 
 @app.route("/histograms/<attr>")
 def player_attributes(attr):
     """Return the attributes """
     results =db.session.query(Player_Attributes.__dict__[attr]).all()
     resultsList=list(np.ravel(results))
+    
+    
+    
     return jsonify(resultsList)
     # return ''.join([str(i) for i in resultsList])
 

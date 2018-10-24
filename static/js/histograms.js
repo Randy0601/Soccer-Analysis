@@ -11,7 +11,7 @@
 
 
 var y = [2, 2, 2]
-var x = htmldata;
+// var x = htmldata;
 
 
 function buildCharts(x, attr) {
@@ -64,7 +64,7 @@ function init() {
     // buildMetadata(firstSample);
   });
 
-  var defaultValue= attrsList[4]
+  var defaultValue= attrsList[0]
   buildCharts(htmldata, defaultValue)
 }
 
