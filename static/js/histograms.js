@@ -1,14 +1,15 @@
-// color references
+//color references
+// colors
 // Grey: #F5F5F5
 // Dark blue: #12356D
 // light blue: #347AB6
 
-// // Dummy data for testing
+// // Test data
 // var y = [2, 2, 2]
 // var x = htmldata;
 
-// builds tthe chart
-// takes 2 arguments: chart data (x) and the name of the trace (attr)
+//function to build charts
+//takes two arguments: data and attribute name
 function buildCharts(x, attr) {
   var trace = {
     x: x,
@@ -16,51 +17,54 @@ function buildCharts(x, attr) {
     showlegend: true,
     name: attr
   };
-  // layout for the chart
+//layout for chart
   var layout = {
     xaxis: {
-      title: "Attribute: " + attr, //chart title
+      title: "Attribute: " + attr,
     },
     yaxis: {
-      title: 'Number of Players',
+      title: 'Number of Players per Rating',
     },
     title: attr + " Distribution",
-    plot_bgcolor: "#F5F5F5", // inner plot bgcolor
-    paper_bgcolor: "#F5F5F5"// outer plot bgcolor
+    plot_bgcolor: "#F5F5F5",//plot bgcolor
+    paper_bgcolor: "#F5F5F5"//plot frame color
   };
-
+  //data for chart
   var data = [trace];
   Plotly.newPlot('myDiv', data, layout);
 }
 
+//function to create the page
 function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
 
-  //clear htnml.
-  document.getElementById("selDataset").innerHTML = "";
+  //clear innerHTML so the list doesn't get duplicated on changes
+  document.getElementById("selDataset").innerHTML="";
 
-  // creates dropdown list from Flask variable
+  // Use the list of attributes to populate the select options
   attrsList.forEach((i) => {
     selector
       .append("option")
       .text(i)
       .property("value", i);
-
   });
-  //set default value for plot to display. Displays first attribute in list
-  var defaultValue = attrsList[0]
-  buildCharts(htmldata, defaultValue)
+  //get data to pass to function that builds charts
+  d3.json("/histograms/" + attrsList[0]).then((sampleNames) => {
+    
+    //define default sample to populate graph
+    var defaultValue= attrsList[0];
+    
+    //call function to build charts
+    buildCharts(sampleNames, defaultValue);
+  });
 }
 
-//when selection is changed get new data and plot
 function optionChanged(newSample) {
-  // Fetch new data each time a new attribute is selected
+  // Fetch new data each time a new sample is selected
   d3.json("/histograms/" + newSample).then((sampleNames) => {
-    //call buildcharts with the new data
     buildCharts(sampleNames, newSample);
   });
 }
-
-//call function to create graphs
+//call initial function
 init();

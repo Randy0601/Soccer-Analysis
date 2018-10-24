@@ -155,33 +155,29 @@ def table():
 def scatter():
     return render_template("scatter.html")
 
-#app route for generating the histograms web page
+
 @app.route("/histograms")
 def histogram():
     """Histogram page"""
     # overall_rating = Player_Attributes.overall_rating
-    # results =db.session.query(Player_Attributes.overall_rating).all()
-    # resultsList=list(np.ravel(results))
+    results =db.session.query(Player_Attributes.overall_rating).all()
+    resultsList=list(np.ravel(results))
     # print(results)
 
-    #get list of field names in table
     attributesList=list(Player_Attributes.__table__.columns.keys())
-    #exclude some fields as the data does not fit a histogram well
     newList = [i for i in attributesList if i not in ("id", "player_fifa_api_id", "player_api_id", "date", "defensive_work_rate")]
     
-    return render_template("histograms.html",attrs=newList) #jsData=resultsList 
+    return render_template("histograms.html", jsData=resultsList, attrs=newList)
 
-#app route for getting data from the database for histogram plots
 @app.route("/histograms/<attr>")
 def player_attributes(attr):
     """Return the attributes """
-    #query the db for all results in the user specified (attr) field
     results =db.session.query(Player_Attributes.__dict__[attr]).all()
-    #flatten array
     resultsList=list(np.ravel(results))
     
+    
+    
     return jsonify(resultsList)
-    #must return a text object. Cannot return numbers directly to a web page.
     # return ''.join([str(i) for i in resultsList])
 
 if __name__ == "__main__":
