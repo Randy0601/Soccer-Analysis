@@ -2,18 +2,24 @@
 // for (var i = 0; i < 500; i ++) {
 // 	x[i] = Math.random();
 // }
-var y= [2,2,2]
-var x= htmldata;
+var y = [2, 2, 2]
+var x = htmldata;
 
 
 function buildCharts(x) {
-  console.log(x)
+  // console.log(x)
   var trace = {
     x: x,
     type: 'histogram'
   };
+
   var layout = {
-    showlegend: true
+    xaxis: {
+      title: 'Overall Player Rating',
+    },
+    yaxis: {
+      title: 'Number of Players per Rating',
+    }
   };
 
   var data = [trace];
@@ -30,13 +36,13 @@ function init() {
   var selector = d3.select("#selDataset");
 
   // Use the list of sample names to populate the select options
-  
+
   attrsList.forEach((i) => {
     selector
       .append("option")
       .text(i)
       .property("value", i);
-    
+
 
     // Use the first sample from the list to build the initial plots
     // const overall = sampleNames[0];
@@ -49,13 +55,14 @@ function init() {
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
 
-  d3.json("/histograms/"+newSample).then((sampleNames) => {
-    console.log(sampleNames, "hello");
+  d3.json("/histograms/" + newSample).then((sampleNames) => {
+    // console.log(sampleNames, "hello");
     buildCharts(sampleNames);
   }
-  // buildMetadata(newSample);
+    // buildMetadata(newSample);
 
-)}
+  )
+}
 
 
 init();

@@ -73,7 +73,7 @@ html,
 }
 
 .soccer {
-  background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
+  /* background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg); */
   background-size: 100px 100px;
   height: 100px;
   width: 100px;
