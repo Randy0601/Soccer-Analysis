@@ -1,86 +1,66 @@
-// var x = [];
-// for (var i = 0; i < 500; i ++) {
-// 	x[i] = Math.random();
-// }
-
-
-// colors
+// color references
 // Grey: #F5F5F5
 // Dark blue: #12356D
 // light blue: #347AB6
 
-
-var y = [2, 2, 2]
+// // Dummy data for testing
+// var y = [2, 2, 2]
 // var x = htmldata;
 
-
+// builds tthe chart
+// takes 2 arguments: chart data (x) and the name of the trace (attr)
 function buildCharts(x, attr) {
-  // console.log(x)
   var trace = {
     x: x,
     type: 'histogram',
     showlegend: true,
     name: attr
-
   };
-
+  // layout for the chart
   var layout = {
     xaxis: {
-      title: "Attribute: " + attr,
+      title: "Attribute: " + attr, //chart title
     },
     yaxis: {
-      title: 'Number of Players per Rating',
+      title: 'Number of Players',
     },
     title: attr + " Distribution",
-    plot_bgcolor: "#F5F5F5",
-    paper_bgcolor: "#F5F5F5"
+    plot_bgcolor: "#F5F5F5", // inner plot bgcolor
+    paper_bgcolor: "#F5F5F5"// outer plot bgcolor
   };
 
   var data = [trace];
   Plotly.newPlot('myDiv', data, layout);
 }
-// console.log(attrsList)
-
-// var testdiv = document.getElementById('testdiv');
-// testdiv.innerHTML += "<p style='color:white;'>Hello</p>";
-
 
 function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
 
-  document.getElementById("selDataset").innerHTML="";
+  //clear htnml.
+  document.getElementById("selDataset").innerHTML = "";
 
-  // Use the list of sample names to populate the select options
-
+  // creates dropdown list from Flask variable
   attrsList.forEach((i) => {
     selector
       .append("option")
       .text(i)
       .property("value", i);
 
-
-    // Use the first sample from the list to build the initial plots
-    // const overall = sampleNames[0];
-    // buildCharts(firstSample);
-    // buildMetadata(firstSample);
   });
-
-  var defaultValue= attrsList[0]
+  //set default value for plot to display. Displays first attribute in list
+  var defaultValue = attrsList[0]
   buildCharts(htmldata, defaultValue)
 }
 
+//when selection is changed get new data and plot
 function optionChanged(newSample) {
-  // Fetch new data each time a new sample is selected
-
+  // Fetch new data each time a new attribute is selected
   d3.json("/histograms/" + newSample).then((sampleNames) => {
-    // console.log(sampleNames, "hello");
+    //call buildcharts with the new data
     buildCharts(sampleNames, newSample);
-  }
-    // buildMetadata(newSample);
-
-  )
+  });
 }
 
-
+//call function to create graphs
 init();
