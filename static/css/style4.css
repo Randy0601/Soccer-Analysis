@@ -6,7 +6,7 @@
 
 html,
 .body {
-  background: linear-gradient(rgba(0, 177, 255, 0.24), rgba(0, 28, 80, 0.78)) !important;
+  /* background: linear-gradient(rgba(0, 177, 255, 0.24), rgba(0, 28, 80, 0.78)) !important; */
   background-size: cover;
   font-family: 'Lato', sans-serif;
   box-sizing:  border-box;
@@ -73,7 +73,7 @@ html,
 }
 
 .soccer {
-  /* background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg); */
+  background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
   background-size: 100px 100px;
   height: 100px;
   width: 100px;
