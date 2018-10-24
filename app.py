@@ -155,28 +155,27 @@ def table():
 def scatter():
     return render_template("scatter.html")
 
-
+#url for histogram page
 @app.route("/histograms")
 def histogram():
     """Histogram page"""
-    # overall_rating = Player_Attributes.overall_rating
-    results =db.session.query(Player_Attributes.overall_rating).all()
-    resultsList=list(np.ravel(results))
-    # print(results)
-
+    #get attribute list. A list of all fields in table
     attributesList=list(Player_Attributes.__table__.columns.keys())
+    #exclude fields that do not fit histogram model
     newList = [i for i in attributesList if i not in ("id", "player_fifa_api_id", "player_api_id", "date", "defensive_work_rate")]
     
-    return render_template("histograms.html", jsData=resultsList, attrs=newList)
+    return render_template("histograms.html", attrs=newList)
 
+#url for querying the db
 @app.route("/histograms/<attr>")
 def player_attributes(attr):
-    """Return the attributes """
+    """Return the data """
+    #query db based on user selection
     results =db.session.query(Player_Attributes.__dict__[attr]).all()
+    #flatten results
     resultsList=list(np.ravel(results))
     
-    
-    
+    #must return a string. Ints won't work.
     return jsonify(resultsList)
     # return ''.join([str(i) for i in resultsList])
 
