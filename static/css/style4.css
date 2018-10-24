@@ -6,7 +6,7 @@
 
 html,
 .body {
-  /* background: linear-gradient(rgba(0, 177, 255, 0.24), rgba(0, 28, 80, 0.78)) !important; */
+  background: linear-gradient(rgba(0, 177, 255, 0.24), rgba(0, 28, 80, 0.78)) !important;
   background-size: cover;
   font-family: 'Lato', sans-serif;
   box-sizing:  border-box;
