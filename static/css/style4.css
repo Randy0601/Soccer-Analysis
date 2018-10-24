@@ -59,7 +59,14 @@ html,
 }
 
 .hero h1 {
-  margin-top: 80px;
+  margin-top: 40px;
+  font-size: 0.1rem;
+  color:white;
+  animation: title 1.2s forwards linear;
+}
+
+.hero h3 {
+  margin-top: 0px;
   font-size: 0.1rem;
   color:white;
   animation: title 1.2s forwards linear;
