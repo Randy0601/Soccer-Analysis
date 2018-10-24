@@ -10,21 +10,11 @@ var trace = {
     x: x,
     type: 'histogram'
   };
-
-var layout = {
-  title: 'Distribution of Players per Overall Rating',
-  xaxis: {
-    title: 'Overall Player Rating',
-  },
-  yaxis: {
-    title: 'Number of Players per Rating',
-  }
+var layout={
+  showlegend: true
 };
-
 
 var data = [trace];
 Plotly.newPlot('myDiv', data, layout);
 
 console.log(attrsList)
-
-
