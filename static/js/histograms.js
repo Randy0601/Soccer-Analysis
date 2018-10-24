@@ -49,6 +49,8 @@ function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
 
+  document.getElementById("selDataset").innerHTML="";
+
   // Use the list of sample names to populate the select options
 
   attrsList.forEach((i) => {
