@@ -12,7 +12,6 @@ var trace = {
   };
 
 var layout = {
-  title: 'Distribution of Players per Overall Rating',
   xaxis: {
     title: 'Overall Player Rating',
   },
