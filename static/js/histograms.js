@@ -2,24 +2,38 @@
 // for (var i = 0; i < 500; i ++) {
 // 	x[i] = Math.random();
 // }
+
+
+// colors
+// Grey: #F5F5F5
+// Dark blue: #12356D
+// light blue: #347AB6
+
+
 var y = [2, 2, 2]
 var x = htmldata;
 
 
-function buildCharts(x) {
+function buildCharts(x, attr) {
   // console.log(x)
   var trace = {
     x: x,
-    type: 'histogram'
+    type: 'histogram',
+    showlegend: true,
+    name: attr
+
   };
 
   var layout = {
     xaxis: {
-      title: 'Overall Player Rating',
+      title: "Attribute: " + attr,
     },
     yaxis: {
       title: 'Number of Players per Rating',
-    }
+    },
+    title: attr + " Distribution",
+    plot_bgcolor: "#F5F5F5",
+    paper_bgcolor: "#F5F5F5"
   };
 
   var data = [trace];
@@ -27,8 +41,8 @@ function buildCharts(x) {
 }
 // console.log(attrsList)
 
-var testdiv = document.getElementById('testdiv');
-testdiv.innerHTML += "<p style='color:white;'>Hello</p>";
+// var testdiv = document.getElementById('testdiv');
+// testdiv.innerHTML += "<p style='color:white;'>Hello</p>";
 
 
 function init() {
@@ -49,7 +63,9 @@ function init() {
     // buildCharts(firstSample);
     // buildMetadata(firstSample);
   });
-  buildCharts(htmldata)
+
+  var defaultValue= attrsList[4]
+  buildCharts(htmldata, defaultValue)
 }
 
 function optionChanged(newSample) {
@@ -57,7 +73,7 @@ function optionChanged(newSample) {
 
   d3.json("/histograms/" + newSample).then((sampleNames) => {
     // console.log(sampleNames, "hello");
-    buildCharts(sampleNames);
+    buildCharts(sampleNames, newSample);
   }
     // buildMetadata(newSample);
 
