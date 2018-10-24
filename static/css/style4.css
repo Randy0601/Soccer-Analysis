@@ -78,9 +78,9 @@ html,
   height: 100px;
   width: 100px;
   position: relative;
-  -webkit-animation:roll 4.5s infinite;
-  -moz-animation:roll 4.5s infinite;
-  animation:roll 4.5s infinite;
+  -webkit-animation:roll 4.5s;
+  -moz-animation:roll 4.5s;
+  animation:roll 4.5s;
 }
 
 @-moz-keyframes roll {  

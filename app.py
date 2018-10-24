@@ -165,7 +165,7 @@ def histogram():
     # print(results)
 
     attributesList=list(Player_Attributes.__table__.columns.keys())
-    newList = [i for i in attributesList if i not in ("id", "player_fifa_api_id", "player_api_id", "date")]
+    newList = [i for i in attributesList if i not in ("id", "player_fifa_api_id", "player_api_id", "date", "defensive_work_rate")]
     
     return render_template("histograms.html", jsData=resultsList, attrs=newList)
 
