@@ -27,7 +27,11 @@ session = Session(engine)
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/database_shrunk.sqlite"
+#added this to quiet the warnings. 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
+
 
 @app.route("/")
 def index():
