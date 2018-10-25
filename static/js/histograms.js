@@ -31,7 +31,7 @@ function buildCharts(x, attr) {
   };
   //data for chart
   var data = [trace];
-  Plotly.newPlot('myDiv', data, layout);
+  Plotly.newPlot('myDiv', data, layout, {displaylogo: false});
 }
 
 //function to create the page
