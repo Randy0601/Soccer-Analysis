@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../static/css/style2.css">
 </head>
 
-<body>
+<body style="background: rgba(0, 28, 80, 0.78);">
   <div class="wrapper">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -18,18 +18,23 @@
           <a class="navbar-brand" href="/">Soccer Analysis
             <img class="nav-player" src="../static/images/soccerball.jpg " style="width: 2%"></a>
         </div>
-        <!-- <div class="collapse navbar-collapse">
+
+        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/"  style="color:white">Home</a></li>
-            <li><a href="player_attr.html" style="color:white">Player Attributes</a></li>
+            <li><a href="table" style="color:white">Table</a></li>
+            <li><a href="scatter" style="color:white">Plots</a></li>
+            <li><a href="histograms" style="color:white">Histograms</a></li>
           </ul>
-        </div> -->
+        </div>
+
       </div>
     </nav>
     <div class="hero text-center">
       <h1>Player Attributes</h1>
       <p>Find Player Statistics</p>
     </div>
+    <div class="soccer"></div>
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-2">
@@ -41,35 +46,39 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Player ID</label>
-                        <input class="form-control" id="player" type="number" placeholder="123456">
+                        <label for="playerid">Enter a Player ID</label>
+                        <input class="form-control" id="playerid" type="number" placeholder="123456">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="City">Overall_Rating</label>
+                        <label for="playername">Player Name</label>
+                        <input class="form-control" id="playername" type="text" placeholder="Wayne Rooney">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="overall_rating">Overall_Rating</label>
                         <input class="form-control" id="overall_rating" type="number" placeholder="60">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="State">Preferred Foot</label>
+                        <label for="preferred_foot">Preferred Foot</label>
                         <input class="form-control" id="preferred_foot" type="text" placeholder="right">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="Country">Crossing</label>
+                        <label for="crossing">Crossing</label>
                         <input class="form-control" id="crossing" type="number" placeholder="68">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Finishing</label>
+                        <label for="finishing">Finishing</label>
                         <input class="form-control" id="finishing" type="number" placeholder="48">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Acceleration</label>
+                        <label for="acceleration">Acceleration</label>
                         <input class="form-control" id="acceleration" type="number" placeholder="57">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Agility</label>
+                        <label for="agility">Agility</label>
                         <input class="form-control" id="agility" type="number" placeholder="60">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="shape">Stamina</label>
+                        <label for="stamina">Stamina</label>
                         <input class="form-control" id="stamina" type="number" placeholder="52">
                       </li>
                     </ul>
@@ -80,16 +89,18 @@
             </div>
           </aside>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
           <div id="table-area" class="">
             <table id="player-table" class="table table-boardered">
               <thead>
                 <tr>
                   <th class="table-head">Player ID</th>
+                  <th class="table-head">Player Name</th>
                   <th class="table-head">Overall_Rating</th>
                   <th class="table-head">Preferred Foot</th>
                   <th class="table-head">Crossing</th>
                   <th class="table-head">Finishing</th>
+                  <th class="table-head">Ball Control</th>
                   <th class="table-head">Acceleration</th>
                   <th class="table-head">Agility</th>
                   <th class="table-head">stamina</th>
@@ -99,6 +110,9 @@
             </table>
           </div>
         </div>
+        <div class="col-md-1">
+          <button onclick=location=URL style="color:black">Refresh</button>
+        </div>
       </div>
     </div>
     <footer class="footer">
@@ -106,6 +120,10 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<<<<<<< HEAD
+=======
+  <script src="../static/js/data.js"></script>  
+>>>>>>> e945cd03abe0ed0f16403808acc4cd7c8528c898
   <script src="../static/js/app2.js"></script>
 </body>
 

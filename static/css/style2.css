@@ -42,6 +42,7 @@
     padding: 5px;
     margin: 0;
     font-size: 14px;
+    background:rgb(0, 28, 80);
   }
   
 
@@ -105,13 +106,14 @@
     padding: 20px;
     margin: 0;
     background: black;
+    background-image: url("../images/soccerbackground.jpg");
     background-attachment: fixed;
     background-position: bottom center;
-    background-size: cover;
+    background-size: 140%;
   }
   
   .hero h1 {
-    margin-top: 100px;
+    margin-top: 80px;
     font-size: 0.1rem;
     animation: title 1.2s forwards linear;
   }
@@ -159,7 +161,7 @@
     #table-area tr td:first-child {
       font-size: 1.8em;
       font-weight: bold;
-      background: #1b3146;
+      background:  linear-gradient(rgba(0, 177, 255, 0.24), rgba(0, 28, 80, 0.78));
     }
   
     #table-area tr td:last-child {
@@ -197,6 +199,39 @@
     }
   }
   
+  .soccer {
+    background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    -webkit-animation:roll 4.5s;
+    -moz-animation:roll 4.5s;
+    animation:roll 4.5s;
+  }
+  
+  @-moz-keyframes roll {  
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  @-webkit-keyframes roll { 
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  
+  @keyframes roll { 
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  
+  .world-cup {
+    color: #82AE6F;
+    text-align: center;
+  }
+
   /* keyframe animations which will be used to animate the title */
   @keyframes title {
     from {

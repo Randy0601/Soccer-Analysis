@@ -1,34 +1,44 @@
-var tabledata = d3.json(`/player_attr`);
-console.log(tabledata);
+var tableData = data;
+
 var tbody = d3.select("tbody");
 
-function buildData(player_attr) {
-d3.json(`/player_attr`).then((player) =>{
-    Object.entries(player).map(function([key, value]) {
-        console.log(`Key: ${key} and Value ${value}`);
+function buildData(data) {
+  var fData = tableData;
+  tbody.html("");
+    data.map((player) => {
+        var row = tbody.append("tr");
+        Object.entries(player).map(([key,value]) => {
             var cell = tbody.append("td");
             cell.text(value);
         });
-    });
+    });    
 };
 
 function filterData(inputData) {
     d3.event.preventDefault();
     tbody.html("");
+    var inputElement = d3.select("#playerid");
+    var inputValue = inputElement.property("value");
+    if (inputValue != ""){
+      console.log(`Filter Player: ${inputValue}`);
+      var filteredData = tableData.filter(data => data.player_fifa_api_id.toString() === inputValue); 
+      console.log(filteredData);
+    }
 
-    var inputElement = d3.select("#player");
+    var inputElement = d3.select("#playername");
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Player: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.player_fifa_api_id === inputValue); 
+      var filteredData = tableData.filter(data => data.player_name === inputValue); 
       console.log(filteredData);
     }
+
 
     var inputElement = d3.select("#stamina");
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Stamina: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.stamina === inputValue); 
+      var filteredData = tableData.filter(data => data.stamina.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -36,7 +46,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Agility: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.agility === inputValue); 
+      var filteredData = tableData.filter(data => data.agility.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -44,7 +54,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Acceleration: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.acceleration === inputValue); 
+      var filteredData = tableData.filter(data => data.acceleration.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -52,7 +62,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Finishing: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.finishing === inputValue); 
+      var filteredData = tableData.filter(data => data.finishing.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -60,7 +70,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Crossing: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.crossing === inputValue); 
+      var filteredData = tableData.filter(data => data.crossing.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -68,7 +78,7 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter Overall_Rating: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.overall_rating === inputValue); 
+      var filteredData = tableData.filter(data => data.overall_rating.toString() >= inputValue); 
       console.log(filteredData);
     }
 
@@ -76,13 +86,13 @@ function filterData(inputData) {
     var inputValue = inputElement.property("value").trim();
     if (inputValue != ""){
       console.log(`Filter preferred_foot: ${inputValue}`);
-      var filteredData = tableData.filter(data => data.preferred_foot === inputValue.toLowerCase()); 
+      var filteredData = tableData.filter(data => data.preferred_foot === inputValue); 
       console.log(filteredData);
     }
 
-    filteredData.map((player_attribute) => {
+    filteredData.map((player) => {
         var row = tbody.append("tr");
-        Object.entries(player_attribute).map(([key,value]) => {
+        Object.entries(player).map(([key,value]) => {
             var cell = tbody.append("td");
             cell.text(value);
         });
@@ -92,4 +102,4 @@ function filterData(inputData) {
 };
 
 d3.select("#filter-btn").on("click", filterData);
-buildData();
+buildData(data);
