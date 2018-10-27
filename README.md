@@ -38,8 +38,8 @@
 
 
   ## Data Flow Diagram
-  
-![dataflow](https://user-images.githubusercontent.com/37318055/47193978-213ca380-d31b-11e8-898c-c64965e61ef6.PNG)
+
+![data_flows](https://user-images.githubusercontent.com/39446363/47608168-3e463600-d9ef-11e8-9c0f-8fc5c34cde2c.png)
 
 
 ## Data Visualization Examples
