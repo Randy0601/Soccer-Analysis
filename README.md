@@ -4,6 +4,7 @@
 ### histograms.html file reads from the histograms.js and style4.html files
 ### player_attr.html file reads from app2.js and style2.css files
 ### scatter.html file reads from app3.js, style3.css and d3style.css
+### The procfile and requirement.txt are needed to setup Heroku
 ### All the images used in the webpages are stored in the static/images folder
 
 
