@@ -39,7 +39,7 @@
 ![data_flows](https://user-images.githubusercontent.com/39446363/47608168-3e463600-d9ef-11e8-9c0f-8fc5c34cde2c.png)
 
 
-## File Tree
+## GitHub File Tree
 ![file_tree](https://user-images.githubusercontent.com/39446363/47672841-ff47ea00-db80-11e8-8373-f0f5c1a6d844.png)
 
 
