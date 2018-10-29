@@ -1,5 +1,9 @@
 # Heroku Link: https://socceranalysis.herokuapp.com/
 
+
+![file_tree](https://user-images.githubusercontent.com/39446363/47671939-b858f500-db7e-11e8-9516-e092cabab46a.png)
+
+
 ### Run app.py file will open the index.html page within template, which reads the app.js file in static/js folder and both style.css and d3Style.css file in static/css folder
 ### histograms.html file reads from the histograms.js and style4.html files
 ### player_attr.html file reads from app2.js and style2.css files
