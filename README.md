@@ -36,7 +36,7 @@
 
 
 ## Data Flow Diagram
-![data_flows](https://user-images.githubusercontent.com/39446363/47608168-3e463600-d9ef-11e8-9c0f-8fc5c34cde2c.png)
+![data_flow](https://user-images.githubusercontent.com/39446363/47673741-7ed6b880-db83-11e8-9b77-8e98072b6fdc.png)
 
 
 ## GitHub File Tree
