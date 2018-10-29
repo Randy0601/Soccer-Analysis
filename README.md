@@ -35,14 +35,12 @@
 ![sample_database](https://user-images.githubusercontent.com/37318055/47193979-213ca380-d31b-11e8-8ea3-ae3d52f15c9b.PNG)
 
 
-  ## Data Flow Diagram
+## Data Flow Diagram
 ![data_flows](https://user-images.githubusercontent.com/39446363/47608168-3e463600-d9ef-11e8-9c0f-8fc5c34cde2c.png)
 
 
 ## File Tree
 ![file_tree](https://user-images.githubusercontent.com/39446363/47672841-ff47ea00-db80-11e8-8373-f0f5c1a6d844.png)
-
-
 
 
 ## Data Visualization Examples
