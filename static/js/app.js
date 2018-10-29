@@ -20,7 +20,7 @@ function buildCharts(sample){
     type: 'scatterpolar',
     r: [data.stamina, data.agility, data.acceleration, data.finishing, data.crossing, data.ball_control, data.stamina],
     theta: ['Stamina','Agility','Acceleration', 'Finishing', 'Crossing','Ball_Control', 'Stamina'],
-    name: data.player_fifa_api_id,
+    name: sample,
     fill: 'toself'
   }];
   
