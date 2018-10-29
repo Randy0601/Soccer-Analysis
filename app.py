@@ -36,7 +36,12 @@ db = SQLAlchemy(app)
 @app.route("/")
 def index():
     """Return the homepage."""
-    return render_template("index.html")
+    results = session.query(Player.player_name, Player_Attributes).join(Player_Attributes, Player.player_fifa_api_id==Player_Attributes.player_fifa_api_id).all()
+    rez= [i[0]for i in results]
+    # print('Here')
+    # print(rez)
+
+    return render_template("index.html", rez =rez)
 
 
 @app.route("/player")
@@ -83,7 +88,7 @@ def names():
     stmt = db.session.query(Player_Attributes).statement
     df = pd.read_sql_query(stmt, db.session.bind)
 
-    sel = [Player_Attributes.player_fifa_api_id]
+    sel = [Player.player_name]
 
     names = [name[0] for name in db.session.query(*sel).order_by(func.random()).all()]
 
@@ -123,34 +128,49 @@ def player_table():
 @app.route("/metadata/<sample>")
 def samples_player(sample):
     """Return the attributes for a given sample."""
-    sel = [
-        Player_Attributes.player_fifa_api_id,
-        Player_Attributes.stamina,
-        Player_Attributes.agility,
-        Player_Attributes.acceleration,
-        Player_Attributes.finishing,
-        Player_Attributes.crossing,
-        Player_Attributes.overall_rating,
-        Player_Attributes.ball_control,
-    ]
+    # print('Howdy')
+    # print(sample)
+    # results3 = db.session.query(*sel).filter(Player_Attributes.player_fifa_api_id == sample).all()
+    # results = session.query(Player, Player_Attributes)\
+    #     .join(Player_Attributes, Player.player_fifa_api_id==Player_Attributes.player_fifa_api_id)\
+    #     .filter(Player.player_name==sample)\
+    #     .all()
 
-    results3 = db.session.query(*sel).filter(Player_Attributes.player_fifa_api_id == sample).all()
+    query = session.query(Player_Attributes)
+    query = query.join(Player, Player.player_fifa_api_id == Player_Attributes.player_fifa_api_id)
+    result = query.filter(Player.player_name==sample).all()
 
-   # Create a dictionary entry for each row of metadata information
+    # print(type(results))
+    # print("test")
+    # print(dir(results[0])) 
+    # print(dir(result[0]))
+
+    # print(result[0].player_fifa_api_id)
+    
+        # print(result[i].player_fifa_api_id)
+
+    # for i in results:
+    #     print(results())
+
+    # print(results)
+#    Create a dictionary entry for each row of metadata information
     samples_player ={}
-    for result in results3:
-        samples_player["player_fifa_api_id"] = result[0]
-        samples_player["stamina"] = result[1]
-        samples_player["agility"] = result[2]
-        samples_player["acceleration"] = result[3]
-        samples_player["finishing"] = result[4]
-        samples_player["crossing"] = result[5]
-        samples_player["overall_rating"] = result[6]
-        samples_player["ball_control"] = result[7]
+    # for result in results3:
 
-    # print(samples_player)
+    # samples_player["player_name"] = "test name"
+    samples_player["stamina"] = result[0].stamina
+    samples_player["agility"] = result[0].agility
+    samples_player["acceleration"] = result[0].acceleration
+    samples_player["finishing"] = result[0].finishing
+    samples_player["crossing"] = result[0].crossing
+    samples_player["overall_rating"] = result[0].overall_rating
+    samples_player["ball_control"] = result[0].ball_control
+
+    # for i in results:
+    #     print(i[0].__dict__)
+   
     return jsonify(samples_player)
-
+    
 @app.route("/table")
 def table():
     return render_template("player_attr.html")

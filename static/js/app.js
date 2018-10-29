@@ -43,22 +43,23 @@ var layout = {
 function init() {
     // Grab a reference to the dropdown select element
     var selector = d3.select("#selDataset");
-  
+    var firstName = nameList[0]
     // Use the list of sample names to populate the select options
-    d3.json("/names").then((sampleNames) => {
-      sampleNames.forEach((sample) => {
+    
+      nameList.forEach((name) => {
         selector
           .append("option")
-          .text(sample)
-          .property("value", sample);
+          .text(name)
+          .property("value", name);
       });
-  
+      // console.log(nameList)
       // Use the first sample from the list to build the initial plots
-      const firstSample = sampleNames[0];
+      const firstSample = firstName;
+
+      console.log(firstSample)
       buildCharts(firstSample);
       buildMetadata(firstSample);
-    });
-  }
+    }
   
 
 
