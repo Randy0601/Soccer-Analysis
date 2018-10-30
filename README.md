@@ -41,6 +41,9 @@
 
 ## GitHub File Tree
 ![file_tree](https://user-images.githubusercontent.com/39446363/47672841-ff47ea00-db80-11e8-8373-f0f5c1a6d844.png)
+    ### The procfile and requirement.txt are needed to setup Heroku
+    ### All the images used in the webpages are stored in the static/images folder
+
 
 
 ## Data Visualization Examples
