@@ -39,10 +39,10 @@
 ![data_flow](https://user-images.githubusercontent.com/39446363/47673741-7ed6b880-db83-11e8-9b77-8e98072b6fdc.png)
 
 
-## GitHub File Tree
+## Soccer Project GitHub File Navigation
 ![file_tree](https://user-images.githubusercontent.com/39446363/47672841-ff47ea00-db80-11e8-8373-f0f5c1a6d844.png)
-              The procfile and requirement.txt are needed to setup Heroku
-              All the images used in the webpages are stored in the static/images folder
+    The procfile and requirement.txt are needed to setup Heroku
+    All the images used in the webpages are stored in the static/images folder
 
 
 
